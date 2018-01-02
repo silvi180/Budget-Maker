@@ -8,7 +8,7 @@ class Api::ProposedsController < ApplicationController
     else
       render json: {errors: @proposed.errors.full_messages}, status: 422
     end
-    
+
   end
 
   def update
@@ -25,7 +25,7 @@ class Api::ProposedsController < ApplicationController
 
   private
     def proposed_params
-      params.permit()
+      params.permit(:budget, :user_id, :category_id)
     end
 
 end

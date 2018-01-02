@@ -1,31 +1,31 @@
-class Api::TransactionsController < ApplicationController
+class Api::PurchasesController < ApplicationController
 
   def create
-    @transaction = Transaction.new(transaction_params)
+    @purchase = Purchase.new(purchase_params)
 
-    if @transaction.save
-      render json: @transaction
+    if @purchase.save
+      render json: @purchase
     else
-      render json: {errors: @transaction.errors.full_messages}, status: 422
+      render json: {errors: @purchase.errors.full_messages}, status: 422
     end
-    
+
   end
 
   def update
-    @transaction = Transaction.find(params[:id])
+    @purchase = Purchase.find(params[:id])
 
-    @transaction.update(transaction_params)
-    if @transaction.save
-      render json: @transaction
+    @purchase.update(purchase_params)
+    if @purchase.save
+      render json: @purchase
     else
-      render json: {errors: @transaction.errors.full_messages}, status: 422
+      render json: {errors: @purchase.errors.full_messages}, status: 422
     end
   end
 
 
   private
-    def transaction_params
-      params.permit()
+    def purchase_params
+      params.permit(:purchase, :user_id, :category_id)
     end
 
 end
