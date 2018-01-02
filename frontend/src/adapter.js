@@ -24,5 +24,5 @@ class Adapter {
     return fetch(`http://localhost:3000/api/users/${id}`, { method: 'DELETE' }).then(response => response.json());
   }
 
-  
+
 }

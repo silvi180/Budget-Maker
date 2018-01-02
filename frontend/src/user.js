@@ -19,4 +19,4 @@ const User = (function createUserClass() {
 
   }
 
-});()
+})()

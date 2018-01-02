@@ -18,4 +18,4 @@ const Purchase = (function createPurchaseClass() {
 
   }
 
-});()
+})()

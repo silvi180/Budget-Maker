@@ -18,4 +18,4 @@ const Proposed = (function createProposedClass() {
 
   }
 
-});()
+})()
