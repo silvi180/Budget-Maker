@@ -2,7 +2,8 @@
 class Adapter {
 
   static getCategories() {
-    return fetch('http://localhost:3000/api/categories').then(response => response.json());
+    return fetch('http://localhost:3000/api/categories')
+    .then(response => response.json());
   }
 
   static getUsers() {
