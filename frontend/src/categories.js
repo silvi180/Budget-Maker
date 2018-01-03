@@ -27,6 +27,11 @@ const Category = (function createCategoryClass() {
       // })
     }
 
+    static getNameById(id){
+      let category = Category.all().find((cat) => cat.id === id)
+      return category.name
+    }
+
   }
 
 })()

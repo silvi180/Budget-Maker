@@ -5,13 +5,15 @@
     <title>BudgetHelper</title>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="src/pie.js"></script>
     <script type="text/javascript" src="src/adapter.js"></script>
     <script type="text/javascript" src="src/events.js"></script>
     <script type="text/javascript" src="src/user.js"></script>
-    <script type="text/javascript" src="src/pie.js"></script>
     <script type="text/javascript" src="src/categories.js"></script>
     <script type="text/javascript" src="src/eventhandler.js"></script>
     <script type="text/javascript" src="src/index.js"></script>
@@ -36,12 +38,16 @@
         <li>Add Purchase</li>
       </div>
 
-      <div id="pie">
 
-      </div>
 
         <div id="user">
 
+        </div>
+
+        <div id="pie">
+          <div id='piechart_before' style='width: 450px; display: inline-block'></div>
+          <div id='piechart_after' style='width: 450px; display: inline-block'></div>
+          <div id='piechart_diff' style='width: 450px; display: inline-block'></div>
         </div>
 
 

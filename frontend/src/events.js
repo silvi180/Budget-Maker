@@ -4,6 +4,7 @@ class Event{
     document.getElementById('login-form').addEventListener('submit', Event.login);
     document.getElementById('form-div').addEventListener('submit', Event.formListener);
     document.getElementsByClassName('navbar')[0].addEventListener('click', () => Event.display(event.target.innerText));
+
   }
 
   static display(event) {
@@ -27,10 +28,13 @@ class Event{
         document.getElementById('pie').style.display = 'none';
         break;
       default:
-        document.getElementById('pie').style.display = 'initial';
         document.getElementById('add-transaction-div').style.display = 'none';
         document.getElementById('edit-proposed-budget-div').style.display = 'none';
         document.getElementById('create-proposed-budget-div').style.display = 'none';
+        document.getElementById('pie').style.display = 'initial';
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        drawChart()
         break;
 
     }
