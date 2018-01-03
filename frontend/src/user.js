@@ -13,6 +13,7 @@ const User = (function createUserClass() {
       this.rent = obj.rent;
       this.purchases = obj.purchases;
       this.proposeds = obj.proposeds;
+      this.categories = obj.categories;
       all.push(this);
     }
 
