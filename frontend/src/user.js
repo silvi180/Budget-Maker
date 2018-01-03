@@ -17,6 +17,17 @@ const User = (function createUserClass() {
       return [...all];
     }
 
+    static findOrCreateUser(firstname, lastname, email) {
+      const existing = User.all().find( user => user.firstname === firstname && user.lastname === lastname);
+
+      if (existing) {
+        return Promise.resolve(existing);
+      } else {
+        return Adapter.createUser({firstname, lastname, email}));
+      }
+    }
+
+
   }
 
 })()

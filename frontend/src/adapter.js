@@ -6,7 +6,18 @@ class Adapter {
   }
 
   static getUsers() {
-    return fetch('http://localhost:3000/api/users').then(response => response.json());
+    return fetch('http://localhost:3000/api/users').then(response => response.map( item => item.json()));
+  }
+
+  static createUser(fields) {
+    return fetch(`http://localhost:3000/api/users`, {
+      method: 'POST',
+      body: JSON.stringify(fields),
+      headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+      }
+    }).then(response => response.json()).then(json => new User(json));;
   }
 
   static updateUser(id, fields) {
