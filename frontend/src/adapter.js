@@ -35,5 +35,57 @@ class Adapter {
     return fetch(`http://localhost:3000/api/users/${id}`, { method: 'DELETE' }).then(response => response.json());
   }
 
+  static createPurchase(fields) {
+    return fetch(`http://localhost:3000/api/purchases`, {
+      method: 'POST',
+      body: JSON.stringify(fields),
+      headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+      }
+    }).then(response => response.json()).then(json => new Purchase(json));;
+  }
+
+  static updatePurchase(id, fields) {
+    return fetch(`http://localhost:3000/api/purchases/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(fields),
+      headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+      }
+    }).then(response => response.json()).then(json => new Purchase(json));;
+  }
+
+  static deletePurchase(id) {
+    return fetch(`http://localhost:3000/api/purchases/${id}`, { method: 'DELETE' }).then(response => response.json());
+  }
+
+
+  static createProposed(fields) {
+    return fetch(`http://localhost:3000/api/proposeds`, {
+      method: 'POST',
+      body: JSON.stringify(fields),
+      headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+      }
+    }).then(response => response.json()).then(json => new Proposed(json));;
+  }
+
+  static updateProposed(id, fields) {
+    return fetch(`http://localhost:3000/api/proposeds/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify(fields),
+      headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+      }
+    }).then(response => response.json()).then(json => new Proposed(json));;
+  }
+
+  static deleteProposed(id) {
+    return fetch(`http://localhost:3000/api/proposeds/${id}`, { method: 'DELETE' }).then(response => response.json());
+  }
 
 }
