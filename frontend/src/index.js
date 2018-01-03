@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded",() => {
     })
   })
 
-  
+  Adapter.getUsers();
+
   Event.handlers()
 })

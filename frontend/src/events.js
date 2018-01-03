@@ -13,7 +13,6 @@ class Event{
 
   static login(event) {
     event.preventDefault();
-    console.log('hi')
     const firstname = event.target.firstname.value;
     const lastname = event.target.lastname.value;
     const email = event.target.email.value;

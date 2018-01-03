@@ -7,7 +7,7 @@ class Adapter {
   }
 
   static getUsers() {
-    return fetch('http://localhost:3000/api/users').then(response => response.map( item => item.json()));
+    return fetch('http://localhost:3000/api/users').then(response => response.json()).then(obj => obj.map(user => new User(user)));
   }
 
   static createUser(fields) {
@@ -32,9 +32,9 @@ class Adapter {
     }).then(response => response.json()).then(json => new User(json));;
   }
 
-  static deleteUser(id) {
-    return fetch(`http://localhost:3000/api/users/${id}`, { method: 'DELETE' }).then(response => response.json());
-  }
+  // static deleteUser(id) {
+  //   return fetch(`http://localhost:3000/api/users/${id}`, { method: 'DELETE' }).then(response => response.json());
+  // }
 
   static createPurchase(fields) {
     return fetch(`http://localhost:3000/api/purchases`, {
