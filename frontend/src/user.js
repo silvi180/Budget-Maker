@@ -24,13 +24,13 @@ const User = (function createUserClass() {
       const existing = User.all().find( user => user.firstname === firstname && user.lastname === lastname);
 
       if (existing) {
-        current_user = existing.id;
+        current_user = existing;
         console.log(existing, `true`, current_user)
         return Promise.resolve(existing);
       } else {
         return Adapter.createUser({firstname:firstname, lastname:lastname, email:email}).then(function(user) {
 
-          current_user = user.id
+          current_user = user;
           console.log(current_user, `created new`)
         });
 
