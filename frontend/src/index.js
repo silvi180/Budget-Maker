@@ -11,4 +11,6 @@ document.addEventListener("DOMContentLoaded",() => {
 
   Event.addFormListener()
 
+  Event.handlers()
+
 })

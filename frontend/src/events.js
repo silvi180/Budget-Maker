@@ -8,10 +8,6 @@ class Event{
     }
   )}
 
-  static handlers() {
-    document.getElementsByClassName('login')[0].addEventListener('submit', Event.login);
-  }
-
   static login(event) {
     event.preventDefault();
     const firstname = event.target.firstname.value ;
@@ -19,10 +15,15 @@ class Event{
     const email = event.target.email.value;
     User.findOrCreateUser(firstname, lastname, email).then(function(user) {
 
-
+      console.log(user)
       document.getElementsByClassName('login')[0].style.display = 'none';
     });
 
+  }
+
+  static handlers() {
+    console.log(document.getElementsByClassName('login')[0])
+    document.getElementsByClassName('login')[0].addEventListener('submit', Event.login);
   }
 
 

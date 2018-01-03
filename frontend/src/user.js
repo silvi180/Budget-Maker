@@ -23,7 +23,7 @@ const User = (function createUserClass() {
       if (existing) {
         return Promise.resolve(existing);
       } else {
-        return Adapter.createUser({firstname, lastname, email}));
+        return Adapter.createUser({firstname, lastname, email});
       }
     }
 
