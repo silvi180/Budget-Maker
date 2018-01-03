@@ -2,10 +2,11 @@ class Event{
 
   static handlers() {
     document.getElementById('login-form').addEventListener('submit', Event.login);
-    document.getElementById("form-div").addEventListener('submit', Event.addEventListener);
+    document.getElementById("form-div").addEventListener('submit', Event.formListener)
   }
 
-  static addFormListener(event){
+  static formListener(event){
+
     event.preventDefault()
     let form = event.target
     handleSubmit(form)
@@ -21,11 +22,6 @@ class Event{
       document.getElementById('user').innerHTML = `Hi, ${firstname} ${lastname}!`
       document.getElementById('login-form').style.display = 'none';
     })
-  }
-
-  static handlers() {
-    console.log(document.getElementsByClassName('login')[0])
-    document.getElementsByClassName('login')[0].addEventListener('submit', Event.login);
   }
 
 
