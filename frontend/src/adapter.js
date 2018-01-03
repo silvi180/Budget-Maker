@@ -44,7 +44,7 @@ class Adapter {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
       }
-    }).then(response => response.json()).then(json => new Purchase(json));;
+    }).then(response => response.json());;
   }
 
   static updatePurchase(id, fields) {
@@ -71,7 +71,7 @@ class Adapter {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
       }
-    }).then(response => response.json()).then(json => new Proposed(json));;
+    }).then(response => response.json());;
   }
 
   static updateProposed(id, fields) {

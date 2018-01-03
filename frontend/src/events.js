@@ -3,11 +3,11 @@ class Event{
   static handlers() {
     document.getElementById('login-form').addEventListener('submit', Event.login);
     document.getElementById('form-div').addEventListener('submit', Event.formListener);
-    document.getElementsByClassName('navbar')[0].addEventListener('click', Event.display);
+    document.getElementsByClassName('navbar')[0].addEventListener('click', () => Event.display(event.target.innerText));
   }
 
   static display(event) {
-    switch(event.target.innerText) {
+    switch(event) {
       case 'Edit Category':
         document.getElementById('edit-proposed-budget-div').style.display = 'initial';
         document.getElementById('create-proposed-budget-div').style.display = 'none';

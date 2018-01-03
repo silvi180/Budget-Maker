@@ -36,16 +36,20 @@
     switch(form.id) {
     case "add-transaction-form":
       for (cat_id in formResults) {
-        fields = {"category_id": cat_id, "user_id": current_user.id, "purchase": formResults[cat_id]}
-        Adapter.createPurchase(fields)
-          .then(data => current_user.purchases.push(data))
+        let fields = {"category_id": cat_id, "user_id": current_user.id, "purchase": formResults[cat_id]}
+        if (fields["purchase"]){
+          Adapter.createPurchase(fields)
+            .then(data => current_user.purchases.push(data))
+          }
         }
       break;
     case "create-proposed-budget-form":
       for (cat_id in formResults) {
-        fields = {"category_id": cat_id, "user_id": current_user.id, "budget": formResults[cat_id]}
-        Adapter.createProposed(fields)
-          .then(data => current_user.proposeds.push(data))
+        let fields = {"category_id": cat_id, "user_id": current_user.id, "budget": formResults[cat_id]}
+        if (fields["budget"]){
+          Adapter.createProposed(fields)
+            .then(data => current_user.proposeds.push(data))
+        }
       }
       break;
     // case "edit-proposed-budget-form":
@@ -59,5 +63,6 @@
     default:
         console.log(form.id)
     }
+    Event.display("other")
 
   }
