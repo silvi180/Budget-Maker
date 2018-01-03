@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>BudgetHelper</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/style.css">
     <script type="text/javascript" src="src/adapter.js"></script>
     <script type="text/javascript" src="src/events.js"></script>
     <script type="text/javascript" src="src/user.js"></script>
@@ -17,27 +16,36 @@
     <script type="text/javascript" src="src/categories.js"></script>
     <script type="text/javascript" src="src/eventhandler.js"></script>
     <script type="text/javascript" src="src/index.js"></script>
+  </head>
+  <body>
+
+    <div class="login">
+      <form id="login-form" action="index.html" method="post">
+        <input type="text" name="firstname" placeholder="firstname">
+        <input type="text" name="lastname" placeholder="lastname">
+        <input type="text" name="email" placeholder="email">
+        <input type="submit" name="submit" placeholder="Submit">
+      </form>
+    </div>
 
     <div class="jumbotron">
-      <div class="container">
 
-        <div class="login">
-          <form id="login-form" action="index.html" method="post">
-            <input type="text" name="firstname" placeholder="firstname">
-            <input type="text" name="lastname" placeholder="lastname">
-            <input type="text" name="email" placeholder="email">
-            <input type="submit" name="submit" placeholder="Submit">
-          </form>
-        </div>
+      <div class="navbar">
+        <li>Edit Category</li>
+        <li>Create Budget</li>
+        <li>Add Purchase</li>
+      </div>
+
+      <div id="pie">
+
+      </div>
 
         <div id="user">
 
         </div>
 
-        <div class="" id="home-div">
 
-        </div>
-        <div class="" id="form-div">
+        <div id="form-div">
 
           <div class="" id="add-transaction-div">
             <h1>Add a Purchase</h1>
@@ -85,9 +93,8 @@
           </div>
         </div>
 
-      </div>
+
     </div>
   </body>
-
 
 </html>
