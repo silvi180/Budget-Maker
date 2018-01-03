@@ -1,5 +1,6 @@
   let counter = 1; //need to clear on submit
-  let limit = 8;
+  const limit = 8;
+
   function handleAddInput(divName){
        if (counter == limit)  {
             alert("You have reached the limit of adding " + counter + " inputs");

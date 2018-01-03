@@ -9,78 +9,85 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   </head>
   <body>
+    <script type="text/javascript" src="src/adapter.js"></script>
+    <script type="text/javascript" src="src/events.js"></script>
+    <script type="text/javascript" src="src/user.js"></script>
+    <script type="text/javascript" src="src/purchase.js"></script>
+    <script type="text/javascript" src="src/proposed.js"></script>
+    <script type="text/javascript" src="src/categories.js"></script>
+    <script type="text/javascript" src="src/eventhandler.js"></script>
+    <script type="text/javascript" src="src/index.js"></script>
 
     <div class="jumbotron">
       <div class="container">
 
         <div class="login">
-          <input type="text" name="firstname" placeholder="firstname">
-          <input type="text" name="lastname" placeholder="lastname">
-          <input type="text" name="email" placeholder="email">
-          <input type="submit" name="submit" placeholder="Submit">
+          <form id="login-form" action="index.html" method="post">
+            <input type="text" name="firstname" placeholder="firstname">
+            <input type="text" name="lastname" placeholder="lastname">
+            <input type="text" name="email" placeholder="email">
+            <input type="submit" name="submit" placeholder="Submit">
+          </form>
         </div>
 
+        <div id="user">
+
+        </div>
 
         <div class="" id="home-div">
 
         </div>
+        <div class="" id="form-div">
 
-        <div class="" id="add-transaction-div">
-          <h1>Add a Purchase</h1>
-          <form class="" action="index.html" method="post" id="add-transaction-form">
-            <div class="" id="add-transaction-input">
-              <label for="category-add-transaction">Category: </label>
-              <select class="category-0" name=""></select>
-              <label for="cost">Cost: </label>
-              <input id="cost-0" type="text" name="" value=""><br>
-            </div>
-            <input type="button" value="Add another Purchase" onClick="handleAddInput('add-transaction-input');"><br>
-            <input type="submit" value="Submit">
-          </form>
+          <div class="" id="add-transaction-div">
+            <h1>Add a Purchase</h1>
+            <form class="" action="index.html" method="post" id="add-transaction-form">
+              <div class="" id="add-transaction-input">
+                <label for="category-add-transaction">Category: </label>
+                <select class="category-0" name=""></select>
+                <label for="cost">Cost: </label>
+                <input id="cost-0" type="text" name="" value=""><br>
+              </div>
+              <input type="button" value="Add another Purchase" onClick="handleAddInput('add-transaction-input');"><br>
+              <input type="submit" value="Submit">
+            </form>
 
-        </div>
+          </div>
 
-        <div class="" id="create-proposed-budget-div">
+          <div class="" id="create-proposed-budget-div">
 
-          <h1>Create Your Budget!</h1>
-          <form class="" action="index.html" method="post" id="create-proposed-budget-form">
-            <div class="" id="add-budget-item-input">
-              <label for="category">Category: </label>
-              <select class="category-0" name=""></select>
-              <label for="cost">Cost: </label>
-              <input id="cost-0" type="text" name="" value=""><br>
-            </div>
-            <input type="button" value="Add Another Budget Item" onClick="handleAddInput('add-budget-item-input');"><br>
-            <input type="submit" value="Submit">
-          </form>
+            <h1>Create Your Budget!</h1>
+            <form class="" action="index.html" method="post" id="create-proposed-budget-form">
+              <div class="" id="add-budget-item-input">
+                <label for="category">Category: </label>
+                <select class="category-0" name=""></select>
+                <label for="cost">Cost: </label>
+                <input id="cost-0" type="text" name="" value=""><br>
+              </div>
+              <input type="button" value="Add Another Budget Item" onClick="handleAddInput('add-budget-item-input');"><br>
+              <input type="submit" value="Submit">
+            </form>
 
-        </div>
+          </div>
 
-        <div class="" id="edit-proposed-budget-div">
-          <h1>Choose Category To Edit</h1>
-          <form class="" action="index.html" method="post" id="edit-proposed-budget-form">
-            <div class="" id="edit-budget-item-input">
-              <label for="category">Category: </label>
-              <select class="category-0" name=""></select>
-              <label for="cost">Cost: </label>
-              <input id="cost-0" type="text" name="" value=""><br>
-            </div>
-            <input type="button" value="Edit Aother Category" onClick="handleAddInput('edit-budget-item-input');"><br>
-            <input type="submit" value="Submit">
-          </form>
+          <div class="" id="edit-proposed-budget-div">
+            <h1>Choose Category To Edit</h1>
+            <form class="" action="index.html" method="post" id="edit-proposed-budget-form">
+              <div class="" id="edit-budget-item-input">
+                <label for="category">Category: </label>
+                <select class="category-0" name=""></select>
+                <label for="cost">Cost: </label>
+                <input id="cost-0" type="text" name="" value=""><br>
+              </div>
+              <input type="button" value="Edit Aother Category" onClick="handleAddInput('edit-budget-item-input');"><br>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
         </div>
 
       </div>
     </div>
   </body>
 
-  <script type="text/javascript" src="src/events.js"></script>
-  <script type="text/javascript" src="src/user.js"></script>
-  <script type="text/javascript" src="src/purchase.js"></script>
-  <script type="text/javascript" src="src/proposed.js"></script>
-  <script type="text/javascript" src="src/categories.js"></script>
-  <script type="text/javascript" src="src/adapter.js"></script>
-  <script type="text/javascript" src="src/eventhandler.js"></script>
-  <script type="text/javascript" src="src/index.js"></script>
 
 </html>

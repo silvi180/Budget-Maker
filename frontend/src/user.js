@@ -1,10 +1,11 @@
-
+let current_user = null;
 const User = (function createUserClass() {
   const all = [];
 
   return class User {
 
     constructor(obj) {
+      this.id = obj.id;
       this.email = obj.email;
       this.firstname = obj.firstname;
       this.lastname = obj.lastname;
@@ -21,9 +22,16 @@ const User = (function createUserClass() {
       const existing = User.all().find( user => user.firstname === firstname && user.lastname === lastname);
 
       if (existing) {
+        current_user = existing.id;
+        console.log(existing, `true`, current_user)
         return Promise.resolve(existing);
       } else {
-        return Adapter.createUser({firstname, lastname, email});
+        return Adapter.createUser({firstname:firstname, lastname:lastname, email:email}).then(function(user) {
+
+          current_user = user.id
+          console.log(current_user, `created new`)
+        });
+
       }
     }
 
