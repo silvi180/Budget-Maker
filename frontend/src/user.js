@@ -41,3 +41,4 @@ const User = (function createUserClass() {
   }
 
 })()
+console.log('user file', current_user)
