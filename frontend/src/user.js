@@ -11,8 +11,8 @@ const User = (function createUserClass() {
       this.lastname = obj.lastname;
       this.monthly_salary = obj.monthly_salary;
       this.rent = obj.rent;
-      this.purchases = obj.purchases
-      this.proposeds = obj.proposeds
+      this.purchases = obj.purchases;
+      this.proposeds = obj.proposeds;
       all.push(this);
     }
 
@@ -24,13 +24,13 @@ const User = (function createUserClass() {
       const existing = User.all().find( user => user.firstname === firstname && user.lastname === lastname);
 
       if (existing) {
-        current_user = existing;
+        current_user = existing.id;
         console.log(existing, `true`, current_user)
         return Promise.resolve(existing);
       } else {
         return Adapter.createUser({firstname:firstname, lastname:lastname, email:email}).then(function(user) {
 
-          current_user = user
+          current_user = user.id
           console.log(current_user, `created new`)
         });
 

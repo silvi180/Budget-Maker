@@ -33,7 +33,6 @@
     })
 
     form.reset()
-
     switch(form.id) {
     case "add-transaction-form":
       for (cat_id in formResults) {

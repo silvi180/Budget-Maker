@@ -9,23 +9,30 @@ class Event{
   static display(event) {
     switch(event.target.innerText) {
       case 'Edit Category':
-          document.getElementById('edit-proposed-budget-div').style.display = 'initial';
-          document.getElementById('create-proposed-budget-div').style.display = 'none';
-          document.getElementById('add-transaction-div').style.display = 'none';
-          document.getElementById('pie').style.display = 'none';
-          break;
+        document.getElementById('edit-proposed-budget-div').style.display = 'initial';
+        document.getElementById('create-proposed-budget-div').style.display = 'none';
+        document.getElementById('add-transaction-div').style.display = 'none';
+        document.getElementById('pie').style.display = 'none';
+        break;
       case 'Create Budget':
-          document.getElementById('create-proposed-budget-div').style.display = 'initial';
-          document.getElementById('edit-proposed-budget-div').style.display = 'none';
-          document.getElementById('add-transaction-div').style.display = 'none';
-          document.getElementById('pie').style.display = 'none';
-          break;
+        document.getElementById('create-proposed-budget-div').style.display = 'initial';
+        document.getElementById('edit-proposed-budget-div').style.display = 'none';
+        document.getElementById('add-transaction-div').style.display = 'none';
+        document.getElementById('pie').style.display = 'none';
+        break;
       case 'Add Purchase':
-          document.getElementById('add-transaction-div').style.display = 'initial';
-          document.getElementById('edit-proposed-budget-div').style.display = 'none';
-          document.getElementById('create-proposed-budget-div').style.display = 'none';
-          document.getElementById('pie').style.display = 'none';
-          break;
+        document.getElementById('add-transaction-div').style.display = 'initial';
+        document.getElementById('edit-proposed-budget-div').style.display = 'none';
+        document.getElementById('create-proposed-budget-div').style.display = 'none';
+        document.getElementById('pie').style.display = 'none';
+        break;
+      default:
+        document.getElementById('pie').style.display = 'initial';
+        document.getElementById('add-transaction-div').style.display = 'none';
+        document.getElementById('edit-proposed-budget-div').style.display = 'none';
+        document.getElementById('create-proposed-budget-div').style.display = 'none';
+        break;
+
     }
   }
 
