@@ -2,7 +2,7 @@ class Event{
 
   static handlers() {
     document.getElementById('login-form').addEventListener('submit', Event.login);
-    document.getElementById('form-div').addEventListener('submit', Event.addFormListener);
+    document.getElementById('form-div').addEventListener('submit', Event.formListener);
     document.getElementsByClassName('navbar')[0].addEventListener('click', Event.display);
   }
 
@@ -52,8 +52,4 @@ class Event{
     })
   }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> fa9c1b562f3327f0ca6bbbb25c5bacdc9c49406b
 }

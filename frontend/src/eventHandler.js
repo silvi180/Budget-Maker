@@ -39,24 +39,24 @@
       for (cat_id in formResults) {
         fields = {"category_id": cat_id, "user_id": current_user.id, "purchase": formResults[cat_id]}
         Adapter.createPurchase(fields)
-          // .then(data => user.purchases.push(data))
+          .then(data => user.purchases.push(data))
         }
       break;
     case "create-proposed-budget-form":
       for (cat_id in formResults) {
         fields = {"category_id": cat_id, "user_id": current_user.id, "purchase": formResults[cat_id]}
         Adapter.createProposed(fields)
-          // .then(data => user.proposeds.push(data))
+          .then(data => user.proposeds.push(data))
       }
       break;
-    case "edit-proposed-budget-form":
-      for (cat_id in formResults) {
-        fields = {"category_id": cat_id, "user_id": current_user.id, "purchase": formResults[cat_id]}
-        Adapter.updateProposed(fields)
-          //this is a bit harder
-          // .then(data => user.proposeds.push(data))
-      }
-        break;
+    // case "edit-proposed-budget-form":
+    //   for (cat_id in formResults) {
+    //     fields = {"category_id": cat_id, "user_id": current_user.id, "purchase": formResults[cat_id]}
+    //     Adapter.updateProposed(fields)
+    //       //this is a bit harder
+    //       // .then(data => user.proposeds.push(data))
+    //   }
+    //     break;
     default:
         console.log(form.id)
     }

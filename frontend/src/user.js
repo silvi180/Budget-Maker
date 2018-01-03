@@ -11,8 +11,8 @@ const User = (function createUserClass() {
       this.lastname = obj.lastname;
       this.monthly_salary = obj.monthly_salary;
       this.rent = obj.rent;
-      // this.purchased = obj.purchased
-      // this.categories =
+      this.purchases = obj.purchases
+      this.proposeds = obj.proposeds
       all.push(this);
     }
 
