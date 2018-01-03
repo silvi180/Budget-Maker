@@ -20,7 +20,7 @@ cat11 = Category.create(name: "Miscellaneous")
 cat12 = Category.create(name: "Restaurants")
 cat13 = Category.create(name: "Savings")
 cat14 = Category.create(name: "Utilities, Cable, Internet, and Phone")
-cat15 = Category.create(name: "Vaccation")
+cat15 = Category.create(name: "Vacation")
 
 
 user1 = User.create(email: "schung@flatiron.com", firstname: "Silvia", lastname: "Chung", monthly_salary: 3000, rent: 1300)
