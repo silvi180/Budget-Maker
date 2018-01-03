@@ -1,28 +1,27 @@
 class Event{
-  static addFormListener(){
-    // let form = document.getElementById(id)
-    document.addEventListener("submit", (event) => {
-      event.preventDefault()
-      let form = event.target
-      handleSubmit(form)
-    }
-  )}
 
   static handlers() {
-    document.getElementsByClassName('login')[0].addEventListener('submit', Event.login);
+    document.getElementById('login-form').addEventListener('submit', Event.login);
+    document.getElementById("form-div").addEventListener('submit', Event.addEventListener);
+  }
+
+  static addFormListener(event){
+    event.preventDefault()
+    let form = event.target
+    handleSubmit(form)
   }
 
   static login(event) {
     event.preventDefault();
-    const firstname = event.target.firstname.value ;
+    console.log('hi')
+    const firstname = event.target.firstname.value;
     const lastname = event.target.lastname.value;
     const email = event.target.email.value;
+
     User.findOrCreateUser(firstname, lastname, email).then(function(user) {
-
-
-      document.getElementsByClassName('login')[0].style.display = 'none';
-    });
-
+      document.getElementById('user').innerHTML = `Hi, ${firstname} ${lastname}!`
+      document.getElementById('login-form').style.display = 'none';
+    })
   }
 
 

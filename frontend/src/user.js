@@ -18,12 +18,15 @@ const User = (function createUserClass() {
     }
 
     static findOrCreateUser(firstname, lastname, email) {
+      console.log("hi")
       const existing = User.all().find( user => user.firstname === firstname && user.lastname === lastname);
 
       if (existing) {
         return Promise.resolve(existing);
       } else {
-        return Adapter.createUser({firstname, lastname, email}));
+        return Adapter.createUser({firstname:firstname, lastname:lastname, email:email});
+        // Adapter.createUser({firstname:firstname, lastname:lastname, email:email})
+        // .then(console.log)
       }
     }
 
