@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded",() => {
-  //we need to get the users categories and use only those for edit budgetItem otherwise
-  //not sure whether to patch or post
-  console.log("reloaded")
-    google.charts.load('current', {'packages':['bar']});
+  google.charts.load('current', {'packages':['bar']});
+  
   Adapter.getCategories()
     .then(data => data.forEach((cat) => new Category(cat)))
     .then(() => {

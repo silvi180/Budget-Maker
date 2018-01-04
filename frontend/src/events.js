@@ -32,8 +32,7 @@ class Event{
         document.getElementById('edit-proposed-budget-div').style.display = 'none';
         document.getElementById('create-proposed-budget-div').style.display = 'none'
         document.getElementById('pie').style.display = 'initial';
-        let data = createDataArrayForBarChart()
-        google.charts.setOnLoadCallback(() => drawChart(data));
+        google.charts.setOnLoadCallback(drawChart);
         break;
 
     }
@@ -42,9 +41,9 @@ class Event{
   static formListener(event){
 
     event.preventDefault()
-    let form = event.target
-    handleSubmit(form)
-      google.charts.setOnLoadCallback(drawChart);
+    let form = event.target;
+    handleSubmit(form);
+      // google.charts.setOnLoadCallback(drawChart);
   }
 
   static login(event) {

@@ -17,9 +17,6 @@ const User = (function createUserClass() {
       all.push(this);
     }
 
-    editProposed(proposedId, newamt){
-      this.
-    }
 
     static all() {
       return [...all];
@@ -30,13 +27,11 @@ const User = (function createUserClass() {
 
       if (existing) {
         current_user = existing;
-        console.log(existing, `true`, current_user)
+
         return Promise.resolve(existing);
       } else {
         return Adapter.createUser({firstname:firstname, lastname:lastname, email:email}).then(function(user) {
-
           current_user = user;
-          console.log(current_user, `created new`)
         });
 
       }
@@ -46,4 +41,3 @@ const User = (function createUserClass() {
   }
 
 })()
-console.log('user file', current_user)
