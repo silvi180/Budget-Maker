@@ -28,13 +28,13 @@ class Event{
         document.getElementById('pie').style.display = 'none';
         break;
       default:
+        console.log("hit default")
         document.getElementById('add-transaction-div').style.display = 'none';
         document.getElementById('edit-proposed-budget-div').style.display = 'none';
-        document.getElementById('create-proposed-budget-div').style.display = 'none';
+        document.getElementById('create-proposed-budget-div').style.display = 'none'
         document.getElementById('pie').style.display = 'initial';
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
-        drawChart()
         break;
 
     }
@@ -57,9 +57,14 @@ class Event{
       document.getElementById('user').innerHTML = `Hi, ${firstname} ${lastname}!`
       document.getElementsByClassName('login')[0].style.display = 'none';
       document.getElementsByClassName('jumbotron')[0].style.display = 'initial';
-      document.getElementById('edit-proposed-budget-div').style.display = 'none';
-      document.getElementById('create-proposed-budget-div').style.display = 'none';
-      document.getElementById('add-transaction-div').style.display = 'none';
+      Event.display("other")
+
+      // document.getElementById('edit-proposed-budget-div').style.display = 'none';
+      // document.getElementById('create-proposed-budget-div').style.display = 'none';
+      // document.getElementById('add-transaction-div').style.display = 'none';
+
+      let selectExisting = document.getElementById("category-existing-0")
+      Category.addCategoriesToDropdown(selectExisting, user.categories)
     })
   }
 

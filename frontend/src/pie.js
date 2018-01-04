@@ -42,7 +42,7 @@
 
 
     function drawChart() {
-      console.log(google.visualization)
+  
       let oldData = google.visualization.arrayToDataTable(createBudgetArray());
 
       let newData = google.visualization.arrayToDataTable(createActualSpendingArray());

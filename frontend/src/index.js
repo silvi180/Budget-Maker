@@ -7,9 +7,10 @@ document.addEventListener("DOMContentLoaded",() => {
     .then(() => {
       let selects = Array.from(document.getElementsByClassName("category-0"))
       selects.forEach((select) => {
-        Category.addCategoriesToDropdown(select)
+        Category.addCategoriesToDropdown(select, Category.all())
+      })
     })
-  })
+
 
   Adapter.getUsers();
   Event.handlers()

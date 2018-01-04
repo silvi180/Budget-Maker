@@ -62,7 +62,7 @@
                 <label for="cost">Cost: </label>
                 <input id="cost-0" type="text" name="" value="" class="cost"><br>
               </div>
-              <input type="button" value="Add another Purchase" onClick="handleAddInput('add-transaction-input');"><br>
+              <input type="button" value="Add another Purchase" onClick="handleAddInput('add-transaction-input', 'category');"><br>
               <input type="submit" value="Submit">
             </form>
 
@@ -78,7 +78,7 @@
                 <label for="cost">Cost: </label>
                 <input id="cost-0" type="text" name="" value="" class="cost"><br>
               </div>
-              <input type="button" value="Add Another Budget Item" onClick="handleAddInput('add-budget-item-input');"><br>
+              <input type="button" value="Add Another Budget Item" onClick="handleAddInput('add-budget-item-input', 'category');"><br>
               <input type="submit" value="Submit">
             </form>
 
@@ -89,11 +89,11 @@
             <form class="" action="index.html" method="post" id="edit-proposed-budget-form">
               <div class="" id="edit-budget-item-input">
                 <label for="category">Category: </label>
-                <select class="category-0" name=""></select>
+                <select class="category-existing-0" name="" id="category-existing-0"></select>
                 <label for="cost">Cost: </label>
                 <input id="cost-0" type="text" name="" value="" class="cost"><br>
               </div>
-              <input type="button" value="Edit Aother Category" onClick="handleAddInput('edit-budget-item-input');"><br>
+              <input type="button" value="Edit Aother Category" onClick="handleAddInput('edit-budget-item-input', 'category-existing');"><br>
               <input type="submit" value="Submit">
             </form>
           </div>

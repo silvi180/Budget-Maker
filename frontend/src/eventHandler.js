@@ -1,7 +1,7 @@
   let counter = 1; //need to clear on submit
   const limit = 8;
 
-  function handleAddInput(divName){
+  function handleAddInput(divName, className){
        if (counter == limit)  {
             alert("You have reached the limit of adding " + counter + " inputs");
        }
@@ -9,14 +9,16 @@
           const wrapper = document.createElement('div');
           wrapper.innerHTML=
             `<label for="category">Category: </label>
-            <select class="category-${counter}" name=""></select>
+            <select class="${className}-${counter}" name=""></select>
             <label for="cost">Cost: </label>
             <input id="cost-${counter}" type="text" name="" value="" class="cost"><br>`
 
           const formDiv = document.getElementById(divName)
           formDiv.appendChild(wrapper)
-          const lastSelect = formDiv.getElementsByClassName(`category-${counter}`)[0]
-          Category.addCategoriesToDropdown(lastSelect)
+          const lastSelect = formDiv.getElementsByClassName(`${className}-${counter}`)[0]
+          let categories
+          className === "category" ? categories = Category.all() : categories = current_user.categories
+          Category.addCategoriesToDropdown(lastSelect, categories)
           counter++;
        }
   }
@@ -61,7 +63,6 @@
     //   }
     //     break;
     default:
-        console.log(form.id)
     }
     Event.display("other")
 
