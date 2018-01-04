@@ -17,6 +17,10 @@ const User = (function createUserClass() {
       all.push(this);
     }
 
+    editProposed(proposedId, newamt){
+      this.
+    }
+
     static all() {
       return [...all];
     }

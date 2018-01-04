@@ -38,7 +38,6 @@ function createBudgetArray(){
   current_user.categories.forEach((cat) => {
     budgetCats.push([cat.name, userProposedBudget(cat.id)])
   });
-  console.log(`budget`, budgetCats)
   return budgetCats;
 }
 
@@ -60,14 +59,12 @@ function createActualSpendingArray() {
     let catAmt = tempSpendingObj[catId]
     spendingCats.push([catName, catAmt])
   }
-  console.log(`spend`,spendingCats)
   return spendingCats
 }
 
 
-  function drawChart(chartData) {
-    console.log("here" +chartData)
-    let data = google.visualization.arrayToDataTable(chartData);
+  function drawChart() {
+    let data = google.visualization.arrayToDataTable(createDataArrayForBarChart());
 
     let options = {
       chart: {

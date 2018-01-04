@@ -44,8 +44,7 @@ class Event{
     event.preventDefault()
     let form = event.target
     handleSubmit(form)
-      let data = createDataArrayForBarChart()
-      google.charts.setOnLoadCallback(() => drawChart(data));
+      google.charts.setOnLoadCallback(drawChart);
   }
 
   static login(event) {
