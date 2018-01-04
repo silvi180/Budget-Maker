@@ -63,18 +63,18 @@ function createActualSpendingArray() {
 }
 
 
-  function drawChart() {
-    let data = google.visualization.arrayToDataTable(createDataArrayForBarChart());
+function drawChart() {
+  let data = google.visualization.arrayToDataTable(createDataArrayForBarChart());
 
-    let options = {
-      chart: {
-        title: 'Your Expenses',
-        subtitle: 'Try to save if you can',
-      },
-      bars: 'horizontal' // Required for Material Bar Charts.
-    };
+  let options = {
+    chart: {
+      title: 'Your Expenses',
+      subtitle: 'Try to save if you can',
+    },
+    bars: 'horizontal' // Required for Material Bar Charts.
+  };
 
-    let chart = new google.charts.Bar(document.getElementById('barchart_material'));
+  let chart = new google.charts.Bar(document.getElementById('barchart_material'));
 
-    chart.draw(data, google.charts.Bar.convertOptions(options));
-  }
+  chart.draw(data, google.charts.Bar.convertOptions(options));
+}

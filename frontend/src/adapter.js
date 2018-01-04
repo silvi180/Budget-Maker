@@ -82,7 +82,7 @@ class Adapter {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
       }
-    }).then(response => response.json()).then(json => new Proposed(json));;
+    }).then(response => response.json());
   }
 
   static deleteProposed(id) {

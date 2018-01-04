@@ -32,8 +32,7 @@ class Event{
         document.getElementById('edit-proposed-budget-div').style.display = 'none';
         document.getElementById('create-proposed-budget-div').style.display = 'none'
         document.getElementById('pie').style.display = 'initial';
-        let data = createDataArrayForBarChart()
-        google.charts.setOnLoadCallback(() => drawChart(data));
+        google.charts.setOnLoadCallback(drawChart);
         break;
 
     }
@@ -44,7 +43,7 @@ class Event{
     event.preventDefault()
     let form = event.target
     handleSubmit(form)
-      google.charts.setOnLoadCallback(drawChart);
+    Event.display("Home")
   }
 
   static login(event) {
@@ -57,7 +56,7 @@ class Event{
       document.getElementById('user').innerHTML = `Hi, ${firstname} ${lastname}!`
       document.getElementsByClassName('login')[0].style.display = 'none';
       document.getElementsByClassName('jumbotron')[0].style.display = 'initial';
-      Event.display("other")
+      Event.display("Home")
 
       let selectExisting = document.getElementById("category-existing-0")
       Category.addCategoriesToDropdown(selectExisting, user.categories)
