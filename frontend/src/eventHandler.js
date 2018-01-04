@@ -27,7 +27,7 @@ const limit = 8;
 
 function handleSubmit(form){
   counter = 1;
-
+  console.log('im from handle submit')
   let formResults = {}
   let formPrices = Array.from(form.getElementsByClassName("cost"))
   let i = 0
@@ -36,23 +36,30 @@ function handleSubmit(form){
       i++
   })
 
-  form.reset()
+
   switch(form.id) {
   case "add-transaction-form":
     for (cat_id in formResults) {
       let fields = {"category_id": cat_id, "user_id": current_user.id, "purchase": formResults[cat_id]}
       if (fields["purchase"]){
         Adapter.createPurchase(fields)
-          .then(data => current_user.purchases.push(data))
+          .then(function(data) {
+            current_user.purchases.push(data);
+            Event.display("other");
+          });
         }
       }
+
     break;
   case "create-proposed-budget-form":
     for (cat_id in formResults) {
       let fields = {"category_id": cat_id, "user_id": current_user.id, "budget": formResults[cat_id]}
       if (fields["budget"]){
         Adapter.createProposed(fields)
-          .then(data => current_user.proposeds.push(data))
+          .then(data => {
+            current_user.proposeds.push(data)
+            Event.display("other");
+          });
       }
     }
     break;
@@ -60,7 +67,10 @@ function handleSubmit(form){
     for (cat_id in formResults) {
       fields = {"category_id": cat_id, "user_id": current_user.id, "budget": formResults[cat_id]}
       Adapter.updateProposed(current_user.getProposedIdByCatId(cat_id), fields)
-        .then(data => current_user.editProposed(cat_id, data.budget))
+        .then(data => {
+          current_user.editProposed(cat_id, data.budget)
+          Event.display("other");
+        })
     }
       break;
   default:

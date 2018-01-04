@@ -41,9 +41,9 @@ class Event{
   static formListener(event){
 
     event.preventDefault()
-    let form = event.target
-    handleSubmit(form)
-    Event.display("Home")
+    let form = event.target;
+    handleSubmit(form);
+      // google.charts.setOnLoadCallback(drawChart);
   }
 
   static login(event) {

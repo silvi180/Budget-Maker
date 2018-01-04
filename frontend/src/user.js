@@ -41,7 +41,6 @@ const User = (function createUserClass() {
         return Promise.resolve(existing);
       } else {
         return Adapter.createUser({firstname:firstname, lastname:lastname, email:email}).then(function(user) {
-
           current_user = user;
         });
 
