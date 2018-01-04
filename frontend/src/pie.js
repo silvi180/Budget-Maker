@@ -1,6 +1,4 @@
 
-
-
   function userProposedBudget(categoryID) {
     let budget;
     current_user.proposeds.forEach(function(category) {
@@ -42,26 +40,20 @@
 
 
     function drawChart() {
-      console.log(google.visualization)
-      let oldData = google.visualization.arrayToDataTable(createBudgetArray());
+    // console.log(google.visualization)
+    let oldData = google.visualization.arrayToDataTable(createBudgetArray());
 
-      let newData = google.visualization.arrayToDataTable(createActualSpendingArray());
+    let newData = google.visualization.arrayToDataTable(createActualSpendingArray());
 
-      let options = { pieSliceText: 'none' };
+    let options = { pieSliceText: 'none' };
 
-      let chartBefore = new google.visualization.PieChart(document.getElementById('piechart_before'));
-      let chartAfter = new google.visualization.PieChart(document.getElementById('piechart_after'));
-      let chartDiff = new google.visualization.PieChart(document.getElementById('piechart_diff'));
+    let chartBefore = new google.visualization.PieChart(document.getElementById('piechart_before'));
+    let chartAfter = new google.visualization.PieChart(document.getElementById('piechart_after'));
+    let chartDiff = new google.visualization.PieChart(document.getElementById('piechart_diff'));
 
-      chartBefore.draw(oldData, options);
-      chartAfter.draw(newData, options);
+    chartBefore.draw(oldData, options);
+    chartAfter.draw(newData, options);
 
-      let diffData = chartDiff.computeDiff(oldData, newData);
-      chartDiff.draw(diffData, options);
-    }
-
-//
-// <span id='piechart_before' style='width: 450px; display: inline-block'></span>
-// <span id='piechart_after' style='width: 450px; display: inline-block'></span>
-// <br>
-// <span id='piechart_diff' style='width: 450px; position: absolute; left: 250px'></span>
+    let diffData = chartDiff.computeDiff(oldData, newData);
+    chartDiff.draw(diffData, options);
+  }

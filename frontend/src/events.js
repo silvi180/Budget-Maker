@@ -34,7 +34,7 @@ class Event{
         document.getElementById('pie').style.display = 'initial';
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart);
-        drawChart()
+        // drawChart();
         break;
 
     }
@@ -60,6 +60,10 @@ class Event{
       document.getElementById('edit-proposed-budget-div').style.display = 'none';
       document.getElementById('create-proposed-budget-div').style.display = 'none';
       document.getElementById('add-transaction-div').style.display = 'none';
+      document.getElementById('pie').style.display = 'initial';
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+      // drawChart();
     })
   }
 

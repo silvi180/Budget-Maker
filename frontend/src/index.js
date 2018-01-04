@@ -12,5 +12,5 @@ document.addEventListener("DOMContentLoaded",() => {
   })
 
   Adapter.getUsers();
-  Event.handlers()
+  Event.handlers();
 })
