@@ -28,13 +28,12 @@ class Event{
         document.getElementById('pie').style.display = 'none';
         break;
       default:
-        console.log("hit default")
         document.getElementById('add-transaction-div').style.display = 'none';
         document.getElementById('edit-proposed-budget-div').style.display = 'none';
         document.getElementById('create-proposed-budget-div').style.display = 'none'
         document.getElementById('pie').style.display = 'initial';
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+        let data = createDataArrayForBarChart()
+        google.charts.setOnLoadCallback(() => drawChart(data));
         break;
 
     }
@@ -45,6 +44,8 @@ class Event{
     event.preventDefault()
     let form = event.target
     handleSubmit(form)
+      let data = createDataArrayForBarChart()
+      google.charts.setOnLoadCallback(() => drawChart(data));
   }
 
   static login(event) {
@@ -58,10 +59,6 @@ class Event{
       document.getElementsByClassName('login')[0].style.display = 'none';
       document.getElementsByClassName('jumbotron')[0].style.display = 'initial';
       Event.display("other")
-
-      // document.getElementById('edit-proposed-budget-div').style.display = 'none';
-      // document.getElementById('create-proposed-budget-div').style.display = 'none';
-      // document.getElementById('add-transaction-div').style.display = 'none';
 
       let selectExisting = document.getElementById("category-existing-0")
       Category.addCategoriesToDropdown(selectExisting, user.categories)
