@@ -1,4 +1,23 @@
+h1 {
+  font: 35px arial, sans-serif;
+  margin: auto;
+  text-align: center;
+}
 
+#form-div {
+    font: 15px arial, sans-serif;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    line-height: 50px;
+    /*padding: 10px;*/
+}
+#user {
+  font: 15px arial, sans-serif;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
 .navbar {
     list-style-type: none;
     margin: 0;
@@ -8,6 +27,7 @@
 }
 
 li {
+    font: 15px arial, sans-serif;
     float: left;
     display: block;
     padding: 8px;
@@ -32,6 +52,6 @@ li {
   display: none;
 }
 
-#pie {
+/*#pie div {
   display: none;
-}
+}*/

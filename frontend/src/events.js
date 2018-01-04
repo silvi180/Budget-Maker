@@ -56,7 +56,7 @@ class Event{
     User.findOrCreateUser(firstname, lastname, email).then(function(user) {
       document.getElementById('user').innerHTML = `Hi, ${firstname} ${lastname}!`
       document.getElementsByClassName('login')[0].style.display = 'none';
-      document.getElementsByClassName('jumbotron')[0].style.display = 'initial';
+      gdocument.getElementsByClassName('jumbotron')[0].style.display = 'initial';
       Event.display("other")
 
       // document.getElementById('edit-proposed-budget-div').style.display = 'none';
