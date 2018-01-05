@@ -3,16 +3,16 @@ const limit = 8;
 
 
   function handleAddInput(divName, className){
+
        if (counter == limit)  {
             alert("You have reached the limit of adding " + counter + " inputs");
-       }
-       else {
+       } else {
           const wrapper = document.createElement('div');
           wrapper.innerHTML=
             `<label for="category">Category: </label>
-            <select class="${className}-${counter}" name=""></select>
+            <select class="${className}-${counter}"></select>
             <label for="cost">Cost: </label>
-            <input id="cost-${counter}" type="text" name="" value="" class="cost"><br>`
+            <input id="cost-${counter}" type="text" class="cost"><br>`
 
           const formDiv = document.getElementById(divName)
           formDiv.appendChild(wrapper)
@@ -58,9 +58,13 @@ function handleSubmit(form){
         Adapter.createProposed(fields)
           .then(data => {
             current_user.proposeds.push(data)
-            Event.display("other");
+              Event.display("other");
           });
       }
+    }
+    const times = document.querySelectorAll('#add-budget-item-input div').length;
+    for(let i = 1; i <= times; i++) {
+      document.querySelectorAll('#add-budget-item-input div')[0].remove()
     }
     break;
   case "edit-proposed-budget-form":
@@ -75,6 +79,7 @@ function handleSubmit(form){
       break;
   default:
   }
+
   Event.display("Home")
 
 }
