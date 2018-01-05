@@ -1,10 +1,10 @@
-let counter = 1; //need to clear on submit
+let counter = 1; //need to clear on switch tabs
 const limit = 8;
 
 
   function handleAddInput(divName, className){
 
-       if (counter == limit)  {
+       if (counter === limit)  {
             alert("You have reached the limit of adding " + counter + " inputs");
        }
        else {
@@ -29,28 +29,23 @@ const limit = 8;
        }
   }
 
+
   function getAppropiateCategoriesByClass(className){
 
-    let categories;
-
-    if (className === "category-all"){
-      categories = Category.all()
-    }
-    else if (className === "category-existing"){
-      categories = current_user.categories
-    }
-    else {
-      let tempCategories = []
+    switch(className) {
+    case "category-all":
+        return Category.all()
+    case "category-existing":
+        return current_user.categories
+    default:
+      let returnCategories = []
       Category.all().forEach((cat) => {
-        if (current_user.categories.find(currCat => currCat.id === cat.id)){
-        }
-        else{
-          tempCategories.push(cat)
+        if (!current_user.categories.find(currCat => currCat.id === cat.id)){
+          returnCategories.push(cat)
         }
       })
-      categories = tempCategories
+      return returnCategories
     }
-    return categories
   }
 
 
@@ -63,6 +58,7 @@ function handleSubmit(form){
       formResults[option.value] = formPrices[i].value
       i++
   })
+  form.reset()
 
 
   switch(form.id) {
@@ -73,7 +69,7 @@ function handleSubmit(form){
         Adapter.createPurchase(fields)
           .then(function(data) {
             current_user.purchases.push(data);
-            Event.display("other");
+            Event.display("Home");
             Event.refreshSelect()
           });
         }
@@ -88,7 +84,7 @@ function handleSubmit(form){
           .then(data => {
             current_user.proposeds.push(data)
             current_user.categories.push(Category.getCatById(data.category_id))
-            Event.display("other");
+            Event.display("Home");
             Event.refreshSelect()
           });
       }
@@ -104,7 +100,7 @@ function handleSubmit(form){
       Adapter.updateProposed(current_user.getProposedIdByCatId(cat_id), fields)
         .then(data => {
           current_user.editProposed(cat_id, data.budget)
-          Event.display("other");
+          Event.display("Home");
           Event.refreshSelect()
         })
     }
@@ -112,6 +108,5 @@ function handleSubmit(form){
   default:
   }
 
-  Event.display("Home")
 
 }
