@@ -57,11 +57,11 @@
             <form class="" action="index.html" method="post" id="add-transaction-form">
               <div class="" id="add-transaction-input">
                 <label for="category-add-transaction">Category: </label>
-                <select class="category-0" name=""></select>
+                <select class="category-all" name="" id="category-all-0"></select>
                 <label for="cost">Cost: </label>
                 <input id="cost-0" type="text" name="" value="" class="cost"><br>
               </div>
-              <input type="button" value="Add another Purchase" onClick="handleAddInput('add-transaction-input', 'category');"><br>
+              <input type="button" value="Add another Purchase" onClick="handleAddInput('add-transaction-input', 'category-all');"><br>
               <input type="submit" value="Submit">
             </form>
 
@@ -73,11 +73,11 @@
             <form class="" action="index.html" method="post" id="create-proposed-budget-form">
               <div class="" id="add-budget-item-input">
                 <label for="category">Category: </label>
-                <select class="category-0" name=""></select>
+                <select class="category-not-proposed" id="category-not-proposed-0"></select>
                 <label for="cost">Cost: </label>
                 <input id="cost-0" type="text" name="" value="" class="cost"><br>
               </div>
-              <input type="button" value="Add Another Budget Item" onClick="handleAddInput('add-budget-item-input', 'category');"><br>
+              <input type="button" value="Add Another Budget Item" onClick="handleAddInput('add-budget-item-input', 'category-not-proposed');"><br>
               <input type="submit" value="Submit">
             </form>
 
@@ -88,7 +88,7 @@
             <form class="" action="index.html" method="post" id="edit-proposed-budget-form">
               <div class="" id="edit-budget-item-input">
                 <label for="category">Category: </label>
-                <select class="category-existing-0" name="" id="category-existing-0"></select>
+                <select class="category-existing" name="" id="category-existing-0"></select>
                 <label for="cost">Cost: </label>
                 <input id="cost-0" type="text" name="" value="" class="cost"><br>
               </div>

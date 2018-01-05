@@ -7,27 +7,54 @@ const limit = 8;
             alert("You have reached the limit of adding " + counter + " inputs");
        }
        else {
+
           const wrapper = document.createElement('div');
           wrapper.innerHTML=
             `<label for="category">Category: </label>
-            <select class="${className}-${counter}" name=""></select>
+            <select class="${className}" id=${className}-${counter}></select>
             <label for="cost">Cost: </label>
             <input id="cost-${counter}" type="text" name="" value="" class="cost"><br>`
 
           const formDiv = document.getElementById(divName)
           formDiv.appendChild(wrapper)
-          const lastSelect = formDiv.getElementsByClassName(`${className}-${counter}`)[0]
-          let categories
-          className === "category" ? categories = Category.all() : categories = current_user.categories
+
+          const lastSelect = document.getElementById(`${className}-${counter}`)
+
+          let categories = getAppropiateCategoriesByClass(className)
+
           Category.addCategoriesToDropdown(lastSelect, categories)
+
           counter++;
        }
+  }
+
+  function getAppropiateCategoriesByClass(className){
+
+    let categories;
+
+    if (className === "category-all"){
+      categories = Category.all()
+    }
+    else if (className === "category-existing"){
+      categories = current_user.categories
+    }
+    else {
+      let tempCategories = []
+      Category.all().forEach((cat) => {
+        if (current_user.categories.find(currCat => currCat.id === cat.id)){
+        }
+        else{
+          tempCategories.push(cat)
+        }
+      })
+      categories = tempCategories
+    }
+    return categories
   }
 
 
 function handleSubmit(form){
   counter = 1;
-  console.log('im from handle submit')
   let formResults = {}
   let formPrices = Array.from(form.getElementsByClassName("cost"))
   let i = 0
@@ -46,6 +73,7 @@ function handleSubmit(form){
           .then(function(data) {
             current_user.purchases.push(data);
             Event.display("other");
+            Event.refreshSelect()
           });
         }
       }
@@ -58,7 +86,9 @@ function handleSubmit(form){
         Adapter.createProposed(fields)
           .then(data => {
             current_user.proposeds.push(data)
+            current_user.categories.push(Category.getCatById(data.category_id))
             Event.display("other");
+            Event.refreshSelect()
           });
       }
     }
@@ -70,11 +100,12 @@ function handleSubmit(form){
         .then(data => {
           current_user.editProposed(cat_id, data.budget)
           Event.display("other");
+          Event.refreshSelect()
         })
     }
       break;
   default:
   }
-  Event.display("Home")
+
 
 }

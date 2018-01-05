@@ -38,7 +38,6 @@ function createBudgetArray(){
   current_user.categories.forEach((cat) => {
     budgetCats.push([cat.name, userProposedBudget(cat.id)])
   });
-  console.log(`budget:spent`, budgetCats)
   return budgetCats;
 }
 
@@ -56,11 +55,10 @@ function createActualSpendingArray() {
   })
 
   for (catId in tempSpendingObj) {
-    let catName = Category.getNameById(parseInt(catId))
+    let catName = Category.getCatById(parseInt(catId)).name
     let catAmt = tempSpendingObj[catId]
     spendingCats.push([catName, catAmt])
   }
-  console.log(`spent only`, spendingCats)
   return spendingCats;
 }
 

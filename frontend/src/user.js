@@ -18,8 +18,8 @@ const User = (function createUserClass() {
     }
 
     getProposedIdByCatId(id){
-      let catName = Category.getNameById(parseInt(id))
-      let proposed = current_user.proposeds.find(proposed => Category.getNameById(parseInt(proposed.category_id)) === catName)
+      let catName = Category.getCatById(parseInt(id)).name
+      let proposed = current_user.proposeds.find(proposed => Category.getCatById(parseInt(proposed.category_id)).name === catName)
       return proposed.id
     }
 

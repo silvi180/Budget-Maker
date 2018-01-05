@@ -1,5 +1,12 @@
 class Event{
 
+  static refreshSelect(){
+    Array.from(document.querySelectorAll('select')).forEach((select) =>{
+      let categories = getAppropiateCategoriesByClass(select.className)
+      Category.addCategoriesToDropdown(select, categories)
+    })
+  }
+
   static handlers() {
     document.getElementById('login-form').addEventListener('submit', Event.login);
     document.getElementById('form-div').addEventListener('submit', Event.formListener);
@@ -7,7 +14,10 @@ class Event{
 
   }
 
+
+
   static display(event) {
+    Event.refreshSelect()
     switch(event) {
       case 'Edit Category':
         document.getElementById('edit-proposed-budget-div').style.display = 'initial';
@@ -41,9 +51,9 @@ class Event{
   static formListener(event){
 
     event.preventDefault()
-    let form = event.target;
-    handleSubmit(form);
-      // google.charts.setOnLoadCallback(drawChart);
+    let form = event.target
+    handleSubmit(form)
+
   }
 
   static login(event) {
@@ -57,9 +67,6 @@ class Event{
       document.getElementsByClassName('login')[0].style.display = 'none';
       document.getElementsByClassName('jumbotron')[0].style.display = 'initial';
       Event.display("Home")
-
-      let selectExisting = document.getElementById("category-existing-0")
-      Category.addCategoriesToDropdown(selectExisting, user.categories)
     })
   }
 

@@ -7,7 +7,9 @@ class Adapter {
   }
 
   static getUsers() {
-    return fetch('http://localhost:3000/api/users').then(response => response.json()).then(obj => obj.map(user => new User(user)));
+    return fetch('http://localhost:3000/api/users')
+    .then(response => response.json())
+    .then(obj => obj.map(user => new User(user)))
   }
 
   static createUser(fields) {

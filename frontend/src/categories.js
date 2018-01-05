@@ -15,22 +15,20 @@ const Category = (function createCategoryClass() {
     }
 
     static addCategoriesToDropdown(dropdownElement, categories) {
-      // let selects = Array.from(document.getElementsByClassName(className))
-      // selects.forEach((select) => {
+      dropdownElement.innerHTML = null
         categories.forEach((category) =>{
-        // select.options[select.options.length] = new Option(category.name, category.id)
           let option = document.createElement('option');
           option.text = category.name;
           option.value = category.id;
           dropdownElement.add(option);
         })
-      // })
     }
 
-    static getNameById(id){
+    static getCatById(id){
       let category = Category.all().find((cat) => cat.id === id)
-      return category.name
+      return category
     }
+
 
   }
 
