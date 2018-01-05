@@ -1,11 +1,21 @@
+body {
+    background-color: #d2f746;
+    margin: auto;
+    text-align: center;
+    font-family: 'Catamaran', sans-serif;
+    color: #373e27;
+}
+
 h1 {
-  font: 35px arial, sans-serif;
+  font-size: 300%;
   margin: auto;
   text-align: center;
 }
-
+#logo {
+  font-size: 16px;
+}
 #form-div {
-    font: 15px arial, sans-serif;
+    font-size: 200%;
     margin: auto;
     text-align: center;
     width: 100%;
@@ -19,39 +29,91 @@ h1 {
   width: 100%;
 }
 .navbar {
-    list-style-type: none;
+    /*list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0;*/
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #38cc3e;
 }
 
 li {
-    font: 15px arial, sans-serif;
+    font-size: 100%;
     float: left;
     display: block;
     padding: 8px;
-    background-color: #dddddd;
+    background-color: #38cc3e;
 }
-.navbar li:hover {
 
+.navbar li:hover {
     background-color: #555;
     color: white;
 }
 
 
-.login {
-  height: 10em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
 
 .jumbotron {
   display: none;
 }
 
-/*#pie div {
-  display: none;
-}*/
+#pie #barchart_material {
+  margin: auto;
+  text-align: center;
+}
+
+.login {
+  line-height: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+
+#login-form {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+input[name=firstname], input[name=lastname], input[name=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[name=login] {
+    background-color: #38cc3e;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[name=login]:hover {
+    opacity: 0.8;
+}
+
+
+.login {
+    padding: 16px;
+}
+
+/*form */
+label[for="category"], label[for="cost"], label[for="category-add-transaction"] {
+  font-size: 16px;
+}
+select[class=category-not-proposed], select[class=category-existing], select[class=category-all]{
+  border: 1px solid #ccc;
+}
+
+input[type=button], input[type=submit] {
+  background-color: #38cc3e;
+  color: white;
+  padding: 10px 16px;
+  margin: 8px 0;
+  border: none;
+}

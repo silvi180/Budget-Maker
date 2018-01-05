@@ -38,6 +38,7 @@ class Event{
         document.getElementById('pie').style.display = 'none';
         break;
       default:
+        document.getElementsByTagName('h1')[0].style.display = 'none';
         document.getElementById('add-transaction-div').style.display = 'none';
         document.getElementById('edit-proposed-budget-div').style.display = 'none';
         document.getElementById('create-proposed-budget-div').style.display = 'none'

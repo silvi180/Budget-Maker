@@ -10,7 +10,7 @@ function userProposedBudget(categoryID) {
 }
 
 function createDataArrayForBarChart() {
-  const merged_array = [['category', 'Budget', 'Spent Amount']];
+  const merged_array = [['Category', 'Budget', 'Spent Amount']];
   const budgetArray = createBudgetArray();
   budgetArray.forEach(budget => merged_array.push(budget));
   const spendingArray = createActualSpendingArray();

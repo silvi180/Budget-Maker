@@ -3,11 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>BudgetHelper</title>
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
 
 
     <link rel="stylesheet" href="css/style.css">
@@ -26,7 +25,7 @@
         <input type="text" name="firstname" placeholder="firstname">
         <input type="text" name="lastname" placeholder="lastname">
         <input type="text" name="email" placeholder="email">
-        <input type="submit" name="submit" placeholder="Submit">
+        <input type="submit" name="login" placeholder="Submit">
       </form>
     </div>
 
@@ -37,6 +36,7 @@
         <li>Edit Category</li>
         <li>Create Budget</li>
         <li>Add Purchase</li>
+        <li id='logo' style="float:right">Budget Helper</li>
       </div>
 
 
@@ -57,7 +57,7 @@
             <form class="" action="index.html" method="post" id="add-transaction-form">
               <div class="" id="add-transaction-input">
                 <label for="category-add-transaction">Category: </label>
-                <select class="category-all" name="" id="category-all-0"></select>
+                <select class="category-all" id="category-all-0"></select>
                 <label for="cost">Cost: </label>
                 <input id="cost-0" type="text" name="" value="" class="cost"><br>
               </div>
@@ -69,9 +69,9 @@
 
           <div class="" id="create-proposed-budget-div">
 
-            <h3>Create Your Budget Or Add Categories to Your Budget!</h3>
-            <form class="" action="index.html" method="post" id="create-proposed-budget-form">
-              <div class="" id="add-budget-item-input">
+            <h3>Create Your Budget</h3>
+            <form action="index.html" method="post" id="create-proposed-budget-form">
+              <div id="add-budget-item-input">
                 <label for="category">Category: </label>
                 <select class="category-not-proposed" id="category-not-proposed-0"></select>
                 <label for="cost">Cost: </label>
@@ -88,7 +88,7 @@
             <form class="" action="index.html" method="post" id="edit-proposed-budget-form">
               <div class="" id="edit-budget-item-input">
                 <label for="category">Category: </label>
-                <select class="category-existing" name="" id="category-existing-0"></select>
+                <select class="category-existing" id="category-existing-0"></select>
                 <label for="cost">Cost: </label>
                 <input id="cost-0" type="text" name="" value="" class="cost"><br>
               </div>
